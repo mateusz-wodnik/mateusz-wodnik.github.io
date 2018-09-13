@@ -8,13 +8,13 @@ const Navigation = () => (
         <NavLink exact to='/' className={styles.link} activeClassName={styles.active}>
             <MdHome />
         </NavLink>
-        <NavLink exact to='/skills' className={styles.link} activeClassName={styles.active}>
+        <NavLink exact to='/umiejetnosci' className={styles.link} activeClassName={styles.active}>
             <MdCode />
         </NavLink>
-        <NavLink exact to='/cv' className={styles.link} activeClassName={styles.active}>
+        <NavLink exact to='/podsumowanie' className={styles.link} activeClassName={styles.active}>
             <MdDock />
         </NavLink>
-        <NavLink exact to='/contact' className={styles.link} activeClassName={styles.active}>
+        <NavLink exact to='/kontakt' className={styles.link} activeClassName={styles.active}>
             <MdContacts />
         </NavLink>
     </section>

@@ -1,0 +1,42 @@
+.container
+    width: 100%
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    margin: auto
+.info, .form
+    margin: 20px
+.info
+    display: flex
+    flex-flow: column
+    max-width: 500px
+    width: 100%
+.title
+    font-size: 3em
+    margin-bottom: 30px
+.text
+    margin-bottom: 30px
+.direct
+    margin-top: auto
+    font-size: 0.7em
+.email
+    font-weight: 900
+    color: green
+.form
+    display: grid
+    grid-gap: 20px
+    max-width: 400px
+    width: 100%
+    input, textarea
+        color: black
+        padding: 10px
+        background: var(--bg-secondary)
+        border: 5px solid var(--bg-primary)
+        &::placeholder
+            text-transform: uppercase
+.submit
+    background: green
+    padding: 15px
+    font-size: 1.2em
+    font-weight: 900
+    text-transform: uppercase

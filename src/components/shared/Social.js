@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './Social.sass';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const Social = () => (
+const Social = ({styles={}}) => (
     <section className={styles.container}>
         <a href="https://www.linkedin.com/in/mateusz-wodnik" target="_blank" className={styles.link}>
             <FaLinkedin />
