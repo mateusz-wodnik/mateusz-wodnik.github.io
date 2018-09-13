@@ -14,8 +14,8 @@ class App extends Component {
       <div className={styles.container}>
         <Sidebar />
         <Switch>
-          <Route exact path={"/personal-site"} component={Home} />
-          <Route exact path={"/personal-site/cv"} component={Cv} />
+          <Route exact path={"/"} component={Home} />
+          <Route exact path={"/cv"} component={Cv} />
         </Switch>
       </div>
     );
