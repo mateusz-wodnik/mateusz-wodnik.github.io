@@ -1,0 +1,34 @@
+.container
+    background-size: cover
+    background-position: top center
+    border: 5px solid var(--bg-secondary)
+    position: relative
+    overflow: hidden
+.image
+    width: 100%
+.modal
+    position: absolute
+    background: rgba(0,0,0,0.7)
+    padding: 20px
+    top: 0
+    width: 100%
+    height: 100%
+    display: flex
+    opacity: 0
+    transition: 0.3s
+    &:hover
+        opacity: 1
+.text
+    margin: auto
+    text-transform: uppercase
+    color: #ffffff
+    text-align: center
+.name
+    margin-bottom: 20px
+.link
+    font-size: 1.6em
+    padding: 10px
+    margin: 0 4px
+    transition: 0.3s
+    &:hover
+        color: var(--color-active)

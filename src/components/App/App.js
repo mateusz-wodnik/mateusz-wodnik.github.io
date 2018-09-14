@@ -8,6 +8,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home'
 import Cv from '../Cv/Cv';
 import Contact from '../Contact/Contact';
+import Projects from '../Projects/Projects';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <Sidebar />
         <Switch>
           <Route exact path={"/"} component={Home} />
+          <Route path={"/projekty"} component={Projects} />
           <Route path={"/podsumowanie"} component={Cv} />
           <Route path={"/kontakt"} component={Contact} />
         </Switch>

@@ -1,0 +1,44 @@
+// .container
+//     display: grid
+//     grid-template: repeat(5, 1fr) / repeat(8, 1fr)
+
+.container
+    display: grid
+    width: 100%
+    --columns: 9
+    --rows: 12
+    grid-template-columns: repeat(var(--columns), calc((100vw - 150px) / var(--columns)))
+    grid-template-rows: repeat(var(--rows), calc((100vw - 150px) / var(--columns)))
+    grid-gap: 10px
+
+// Mixin that returns for each image index two css variables values for grid-column and grid-row property
+=project($idx, $col, $row)
+    --project-#{$idx}-col: auto / span #{$col}
+    --project-#{$idx}-row: auto / span #{$row}
+
+// Images position variables
+.container
+    +project(0,2,2)
+    +project(1,2,2)
+    +project(2,5,5)
+    +project(3,4,4)
+    +project(4,2,2)
+    +project(5,3,3)
+    +project(6,4,3)
+    +project(7,2,2)
+    +project(8,3,3)
+
+// Create image classes using provided css variables
+\:global
+    @for $i from 0 through 8
+        .project-#{$i}
+            grid-column: var(--project-#{$i}-col)
+            grid-row: var(--project-#{$i}-row)
+
+// @media (min-width: 768px)
+//     .container
+//         --rows: 7
+//         +project(2,1,1)
+//         +project(3,2,1)
+//         +project(5,3,4)
+//         +project(6,3,2)
