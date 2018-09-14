@@ -3,7 +3,20 @@
     display: flex
     flex-flow: row wrap
     justify-content: center
-    margin: auto
+    align-items: center
+    position: relative
+    &:before
+        content: ""
+        height: 100%
+        width: 100%
+        z-index: -1
+        position: absolute
+        background: url("/images/myImage.png") no-repeat
+        background-position: bottom
+        background-position: -524px bottom
+        background-size: auto 100%
+        filter: opacity(40%)
+    
 .info, .form
     margin: 20px
 .info
@@ -40,3 +53,6 @@
     font-size: 1.2em
     font-weight: 900
     text-transform: uppercase
+
+.image
+    width: 30%

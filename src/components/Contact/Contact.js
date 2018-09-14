@@ -17,6 +17,7 @@ class Contact extends Component {
         const {headerText, contentText, footerText, emailText, printedHeader, printedContent} = this.state;
         return(
             <article className={styles.container}>
+                {/* <img className={styles.image} src="/images/myImage.png" alt="my image"/> */}
                 <div className={styles.info}>
                     <h1 className={styles.title}><PrintText text={headerText} interval={100} randomize={100} callback={() => this.setState({printedHeader: true})} /></h1>
                     {printedHeader && <p className={styles.text}><PrintText text={contentText} interval={35} randomize={35} callback={() => this.setState({printedContent: true})} /></p>}
