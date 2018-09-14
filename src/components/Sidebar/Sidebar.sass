@@ -1,9 +1,48 @@
 .container
+    --width: 60px
+    z-index: 1000
     display: flex
     flex-flow: column nowrap
     justify-content: space-between
     height: 100vh
-    position: sticky
+    width: var(--width)
+    position: fixed
+    right: 100%
     top: 0
     background: var(--bg-sidebar)
     color: var(--bg-helper)
+    transition: 0.3s
+.container.active
+    right: calc(100% - var(--width))
+
+.button
+    position: fixed
+    left: 0
+    z-index: 1000
+    --size: 60px
+    width: var(--size)
+    height: var(--size)
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-items: center
+.b1, .b2, .b3
+    width: 40px
+    border-top: 7px solid black
+    margin-bottom: calc(5px)
+    transition: 0.3s
+
+.active .b1
+    transform: rotate(45deg)
+    transform-origin: 6px 9px
+.active .b2
+    opacity: 0
+.active .b3
+    transform: rotate(-45deg)
+    transform-origin: 6px -3px
+
+@media (min-width: 760px)
+    .button
+        display: none
+    .container
+        position: sticky
