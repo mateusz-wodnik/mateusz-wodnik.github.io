@@ -17,15 +17,14 @@ class Contact extends Component {
         const {headerText, contentText, footerText, emailText, printedHeader, printedContent} = this.state;
         return(
             <article className={styles.container}>
-                {/* <img className={styles.image} src="/images/myImage.png" alt="my image"/> */}
+            <div className={styles.modal}>
                 <div className={styles.info}>
                     <h1 className={styles.title}><PrintText text={headerText} interval={100} randomize={100} callback={() => this.setState({printedHeader: true})} /></h1>
-                    {printedHeader && <p className={styles.text}><PrintText text={contentText} interval={35} randomize={35} callback={() => this.setState({printedContent: true})} /></p>}
+                    {printedHeader && <p className={styles.text}><PrintText text={contentText} interval={10} randomize={10} callback={() => this.setState({printedContent: true})} /></p>}
                     {printedHeader && <Social styles={stylesSocial}/>}
                     {printedContent && 
                         <footer className={styles.direct}>
-                            <p><small>{footerText}</small></p>
-                            <p>Bezpośredni email: <a href={`mailto:${emailText}`} className={styles.email}>{emailText}</a></p>
+                            <p><small>{footerText}</small> Bezpośredni email: <a href={`mailto:${emailText}`} className={styles.email}>{emailText}</a></p>
                         </footer>
                     }
                 </div>
@@ -36,6 +35,7 @@ class Contact extends Component {
                     <textarea name="message" cols="30" rows="10" placeholder="Wiadomość"></textarea>
                     <button className={styles.submit}>Wyślij wiadomość</button>
                 </form>
+            </div>
             </article>
         );
     }
