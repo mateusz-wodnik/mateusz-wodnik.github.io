@@ -1,4 +1,19 @@
 .container
-    display: flex
-    flex-flow: row wrap
+    display: grid
+    height: 100%
+    align-items: start
+    justify-self: center
+    grid-template: 1fr / 1fr
+    grid-gap: 40px
+    margin: 0 20px
+
+.name
     width: 100%
+    padding: 20px
+    background: var(--bg-primary)
+
+@media (min-width: 600px)
+    .container
+        grid-gap: 20px
+        margin: 0
+        grid-template: 1fr / 1fr 1fr

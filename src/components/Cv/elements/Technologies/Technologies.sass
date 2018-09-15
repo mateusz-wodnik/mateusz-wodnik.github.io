@@ -1,17 +1,31 @@
 .container
-    padding: 20px
+    padding-bottom: 20px
     flex: 2
-    border-right: 7px solid var(--bg-primary)
+    max-height: 500px
+    min-width: 250px
+    overflow: auto
+    border: 5px solid var(--bg-primary)
 .name
-    margin-bottom: 40px
     text-transform: uppercase
     text-align: center
-    background: rgba(0,0,0,0.2)
-    border-radius: 30px
+    background: rgba(0,0,0,0.4)
     padding: 15px
+    position: sticky
+    left: 0
+    top: 0
+    margin-bottom: 20px
 .list
-    display: grid
-    grid-template-columns: repeat(auto-fill, 200px)
-    align-items: center
-    justify-content: center
-    grid-gap: 20px 40px
+    display: flex
+    justify-content: flex-start
+
+@media (min-width: 600px)
+    .container
+        border: 7px solid var(--bg-primary)
+        border-top: 0
+        max-height: 100%
+    .list
+        display: grid
+        grid-template-columns: repeat(auto-fill, 200px)
+        align-items: center
+        justify-content: center
+        grid-gap: 20px

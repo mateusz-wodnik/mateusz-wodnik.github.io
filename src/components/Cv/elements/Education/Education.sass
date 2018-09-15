@@ -1,16 +1,26 @@
 .container
-    padding: 20px
+    padding: 0 20px 20px
     flex: 1
-    border-left: 7px solid var(--bg-primary)
+    max-height: 500px
+    min-width: 250px
+    overflow: auto
+    border: 5px solid var(--bg-primary)
 .name
-    padding: -20px
-    margin-bottom: 40px
+    margin: -20px -20px 40px
     text-transform: uppercase
     text-align: center
-    background: rgba(0,0,0,0.2)
-    border-radius: 30px
+    background: rgba(0,0,0,0.4)
     padding: 15px
+    position: sticky
+    top: 0
 .list
     display: flex
     flex-flow: column
     align-items: center
+
+@media (min-width: 600px)
+    .container
+        border: 7px solid var(--bg-primary)
+        border-top: 0
+        max-height: 100%
+        

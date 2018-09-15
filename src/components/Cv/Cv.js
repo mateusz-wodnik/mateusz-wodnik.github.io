@@ -5,9 +5,12 @@ import Technologies from './elements/Technologies/Technologies';
 import Education from './elements/Education/Education';
 
 const Cv = () => (
-    <article id="cv" className={styles.container}>
-        <Technologies technologies={data.skills} />
-        <Education education={data.education} />
+    <article id="cv" className={styles.wrapper}>
+        <h2 className={styles.name}>Umiejętności</h2>
+        <div className={styles.container}>
+            <Technologies technologies={data.skills} />
+            <Education education={data.education} />
+        </div>
     </article>
 );
 

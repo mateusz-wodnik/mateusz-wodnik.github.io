@@ -1,14 +1,14 @@
-// .container
-//     display: grid
-//     grid-template: repeat(5, 1fr) / repeat(8, 1fr)
-
-.container
+.list
     display: grid
     width: 100%
     --columns: 9
     --rows: 13
     grid-template-columns: 1fr
-    grid-template-rows: 1fr
+    
+.name
+    width: 100%
+    padding: 20px
+    background: var(--bg-primary)
 
 // Mixin that returns for each image index two css variables values for grid-column and grid-row property
 =project($idx, $col, $row, $order)
@@ -25,23 +25,22 @@
             order: var(--project-#{$i}-order)
 
 @media (min-width: 768px)
-    .container
+    .list
         grid-template-columns: 1fr 1fr
-        grid-template-rows: repeat(7, calc(100vw / 2 - 35px))
+        grid-template-rows: repeat(6, calc(100vw / 2 - 35px))
         +project(0,1,1,0)
         +project(1,1,1,1)
         +project(2,1,1,2)
         +project(3,1,1,3)
-        +project(4,1,1,4)
-        +project(5,1,1,5)
-        +project(6,1,1,6)
+        +project(4,1,2,4)
+        +project(5,1,2,5)
+        +project(6,1,2,6)
         +project(7,1,1,7)
         +project(8,1,1,8)
         
 
 @media (min-width: 992px)
-    .container
-        // calc => 100vw - (sidebarWidth + scrollbarWidth)
+    .list
         grid-template-columns: repeat(var(--columns), calc((100vw - 72px) / var(--columns)))
         grid-template-rows: repeat(var(--rows), calc((100vw - 72px) / var(--columns)))
         +project(0,4,4,0)
@@ -55,7 +54,7 @@
         +project(8,2,2,8)
 
 @media (min-width: 1200px)
-    .container
+    .list
         --columns: 8
         --rows: 10
         +project(0,3,3,0)

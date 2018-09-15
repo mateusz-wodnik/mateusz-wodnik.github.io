@@ -10,8 +10,10 @@ class Projects extends Component {
     render() {
         return(
             <article id="projects" className={styles.container}>
-                {console.log(data)}
-                {data.map((project, idx) => <Project key={project.repo} project={project} name={`project-${idx}`} />)}
+                <h2 className={styles.name}>Projekty</h2>
+                <div className={styles.list}>
+                    {data.map((project, idx) => <Project key={project.repo} project={project} name={`project-${idx}`} />)}
+                </div>
             </article>
         );
     }
