@@ -5,7 +5,7 @@ import Technologies from './elements/Technologies/Technologies';
 import Education from './elements/Education/Education';
 
 const Cv = () => (
-    <article className={styles.container}>
+    <article id="cv" className={styles.container}>
         <Technologies technologies={data.skills} />
         <Education education={data.education} />
     </article>

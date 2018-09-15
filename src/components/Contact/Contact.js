@@ -16,7 +16,7 @@ class Contact extends Component {
     render() {
         const {headerText, contentText, footerText, emailText, printedHeader, printedContent} = this.state;
         return(
-            <article className={styles.container}>
+            <article id="contact" className={styles.container}>
             <div className={styles.modal}>
                 <div className={styles.info}>
                     <h1 className={styles.title}><PrintText text={headerText} interval={100} randomize={100} callback={() => this.setState({printedHeader: true})} /></h1>

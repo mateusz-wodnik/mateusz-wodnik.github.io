@@ -8,7 +8,7 @@ class Home extends Component {
     }
     render() {
         return(
-            <article className={styles.container}>
+            <article id="home" className={styles.container}>
                 <div className={styles.text}>
                     <h1><PrintText text="Cześć! Nazywam się Mateusz." interval={150} randomize={150} callback={() => this.setState({printed: true})} /></h1>
                     <h2>{this.state.printed && <PrintText text="Jestem Web developerem" interval={150} randomize={150} />}</h2>

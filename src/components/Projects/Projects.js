@@ -9,7 +9,7 @@ class Projects extends Component {
     }
     render() {
         return(
-            <article className={styles.container}>
+            <article id="projects" className={styles.container}>
                 {console.log(data)}
                 {data.map((project, idx) => <Project key={project.repo} project={project} name={`project-${idx}`} />)}
             </article>

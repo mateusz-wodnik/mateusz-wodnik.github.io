@@ -3,20 +3,17 @@ import { NavLink } from 'react-router-dom';
 import styles from './Navigation.sass';
 import { MdHome, MdCode, MdDock, MdContacts } from 'react-icons/md';
 
+const scroll = (e, id) => {
+    e.preventDefault(); 
+    document.getElementById(id).scrollIntoView({behavior: "smooth"});
+}
+
 const Navigation = () => (
     <section className={styles.container}>
-        <NavLink exact to='/' className={styles.link} activeClassName={styles.active}>
-            <MdHome />
-        </NavLink>
-        <NavLink exact to='/projekty' className={styles.link} activeClassName={styles.active}>
-            <MdCode />
-        </NavLink>
-        <NavLink exact to='/podsumowanie' className={styles.link} activeClassName={styles.active}>
-            <MdDock />
-        </NavLink>
-        <NavLink exact to='/kontakt' className={styles.link} activeClassName={styles.active}>
-            <MdContacts />
-        </NavLink>
+        <a onClick={(e) => scroll(e, "home")} href="#home" className={styles.link}><MdHome /></a>
+        <a onClick={(e) => scroll(e, "projects")} href="#projects" className={styles.link}><MdCode /></a>
+        <a onClick={(e) => scroll(e, "cv")} href="#cv" className={styles.link}><MdDock /></a>
+        <a onClick={(e) => scroll(e, "contact")} href="#contact" className={styles.link}><MdContacts /></a>
     </section>
 );
 
