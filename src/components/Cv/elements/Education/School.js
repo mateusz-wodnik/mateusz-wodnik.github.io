@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './School.sass';
-import { FaArrowRight } from "react-icons/fa"
+import { FaArrowRight } from "react-icons/fa";
+import LazyImg from '../../../../_utils/LazyImg';
 
 const School = ({school}) => (
     <li className={styles.container}>
-        <img src={require(`../../icons/${school.img}`)} className={styles.icon} />
+        <LazyImg src={require(`../../icons/${school.img}`)} className={styles.icon} />
         <div className={styles.content}>
             <p className={styles.date}>{school.startDate} <span className={styles.arrow}><FaArrowRight /></span> {school.endDate ? school.endDate : '...'}</p>
             <div className={styles.info}>
