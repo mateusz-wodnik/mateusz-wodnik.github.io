@@ -28,12 +28,12 @@ class Contact extends Component {
                         </footer>
                     }
                 </div>
-                <form className={styles.form}>
+                <form action="https://formspree.io/mateusz.wodnik@gmail.com" method="POST" className={styles.form}>
                     <input type="text" name="name" placeholder="Imię i nazwisko"/>
-                    <input type="email" name="email" placeholder="twój-email@mail.com"/>
+                    <input type="email" name="_replyto" placeholder="twój-email@mail.com"/>
                     <input type="text" name="way" placeholder="Jak się o mnie dowiedziałeś?"/>
                     <textarea name="message" cols="30" rows="10" placeholder="Wiadomość"></textarea>
-                    <button className={styles.submit}>Wyślij wiadomość</button>
+                    <button type="submit" className={styles.submit}>Wyślij wiadomość</button>
                 </form>
             </div>
             </article>
