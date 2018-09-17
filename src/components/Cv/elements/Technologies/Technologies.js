@@ -2,34 +2,6 @@ import React from 'react';
 import styles from './Technologies.sass';
 import Technology from './Technology';
 
-const hand = (e) => {
-    console.log('top')
-    e.target.style.order = 1
-    setTimeout(() => {
-        e.target.classList.remove(styles.hide)
-    }, 66)
-    e.target.removeEventListener(e.type, hand)
-}
-
-const hand2 = (e) => {
-    console.log('bottom')
-    e.target.style.order = 0
-    e.target.classList.remove(styles.hide)
-    e.target.removeEventListener("transitionend", hand2)
-}
-
-const handleSlider = (e, dir) => {
-    const element = document.querySelector("#technologies")
-    element.style.minWidth = `${element.scrollWidth}px`
-    if(dir) {
-        element.childNodes[0].classList.add(styles.hide)
-        element.childNodes[0].addEventListener("transitionend", hand)
-    } else {
-        element.childNodes[0].classList.add(styles.hide)
-        element.childNodes[0].addEventListener("transitionend", hand2)
-    }
-}
-
 const Technologies = ({technologies}) => (
     <section className={styles.container}>
         <h2 className={styles.name}>Technologie</h2>
@@ -49,32 +21,44 @@ export default Technologies;
 class Slider extends React.Component {
     state = {
         order: 0,
-        trail: 0
+        trail: 0,
     }
     handleSlider = (e, dir) => {
-        const {order, trail} = this.state
+        let {order, trail, change} = this.state
         const element = document.querySelector("#technologies")
         const childrens = element.childNodes
+        const handler = dir ? this.forward : this.back
 
-        this.setState(state => ({ trail: state.trail + dir ? 1 : -1 }))
-        childrens[0].classList.add(styles.hide)
-        childrens[0].addEventListener("transitionend", dir ? this.forward : this.back)
+        if(trail === childrens.length ) {
+            trail = 0
+            order = order + 1
+        } else if(trail < 0) {
+            order = order - 1
+        }
+        if (trail === -14) {
+            trail = 0
+        }
+
+        childrens[trail < 0 ? childrens.length + trail : trail].classList.add(styles.hide)
+        childrens[trail < 0 ? childrens.length + trail : trail].addEventListener("transitionend", e => handler(e, dir ? order + 1 : order))
+        const value = dir ? trail + 1 : trail - 1
+        this.setState({trail: value, order})
     }
 
-    forward = (e) => {
-        console.log('top')
-        e.target.style.order = 1
+    forward = (e, order) => {
+        e.target.style.order = order
         setTimeout(() => {
             e.target.classList.remove(styles.hide)
-        }, 66)
-        e.target.removeEventListener(e.type, hand)
+        }, 100)
+        e.target.removeEventListener(e.type, this.forward)
     }
     
-    back = (e) => {
-        console.log('bottom')
-        e.target.style.order = 0
-        e.target.classList.remove(styles.hide)
-        e.target.removeEventListener("transitionend", hand2)
+    back = (e, order) => {
+        e.target.style.order = order
+        setTimeout(() => {
+            e.target.classList.remove(styles.hide)
+        }, 100)
+        e.target.removeEventListener(e.type, this.back)
     }
 
     render() {
@@ -85,18 +69,4 @@ class Slider extends React.Component {
             </div>
         )
     }
-
-}
-
-
-const handleGallery = (e, right=true) => {
-    const element = document.querySelector("#technologies")
-    const {scrollWidth, offsetWidth, childNodes: {length}} = element
-    const span = Math.floor(scrollWidth / length)
-    const variable = window.getComputedStyle(element).getPropertyValue('--offsetX')
-    let offset = Number(variable.slice(0, variable.length - 2))
-    console.log(offset, scrollWidth - offsetWidth)
-    if(-offset > scrollWidth - offsetWidth) offset = span
-    console.log(offset, span)
-    element.style.setProperty("--offsetX", `${right ? offset - span : offset + span}px`)
 }
