@@ -17,27 +17,28 @@ class Contact extends Component {
         const {headerText, contentText, footerText, emailText, printedHeader, printedContent} = this.state;
         return(
             <article id="contact" className={styles.container}>
-            <div className={styles.modal}>
-                <div className={styles.info}>
-                    {/* <h1 className={styles.title}><PrintText text={headerText} interval={100} randomize={100} callback={() => this.setState({printedHeader: true})} /></h1> */}
-                    {/* {printedHeader && <p className={styles.text}><PrintText text={contentText} interval={10} randomize={10} callback={() => this.setState({printedContent: true})} /></p>} */}
-                    <h1 className={styles.title}>{headerText}</h1>
-                    <p className={styles.text}>{contentText}</p>
-                    {printedHeader && <Social styles={stylesSocial}/>}
-                    {/* {printedContent &&  */}
-                        <footer className={styles.direct}>
-                            <p><small>{footerText}</small> Bezpośredni email: <a href={`mailto:${emailText}`} className={styles.email}>{emailText}</a></p>
-                        </footer>
-                    {/* } */}
+                <div className={styles.modal}>
+                    <div className={styles.info}>
+                        {/* <h1 className={styles.title}><PrintText text={headerText} interval={100} randomize={100} callback={() => this.setState({printedHeader: true})} /></h1> */}
+                        {/* {printedHeader && <p className={styles.text}><PrintText text={contentText} interval={10} randomize={10} callback={() => this.setState({printedContent: true})} /></p>} */}
+                        <h1 className={styles.title}>{headerText}</h1>
+                        <p className={styles.text}>{contentText}</p>
+                        {printedHeader && <Social styles={stylesSocial}/>}
+                        {/* {printedContent &&  */}
+                            <footer className={styles.direct}>
+                                <p><small>{footerText}</small> Bezpośredni email: <a href={`mailto:${emailText}`} className={styles.email}>{emailText}</a></p>
+                            </footer>
+                        {/* } */}
+                    </div>
+                    <form action="https://formspree.io/mateusz.wodnik@gmail.com" method="POST" className={styles.form}>
+                        <input type="text" name="name" placeholder="Imię i nazwisko"/>
+                        <input type="email" name="_replyto" placeholder="twój-email@mail.com"/>
+                        <input type="text" name="way" placeholder="Jak się o mnie dowiedziałeś?"/>
+                        <textarea name="message" cols="30" rows="10" placeholder="Wiadomość"></textarea>
+                        <button type="submit" className={styles.submit}>Wyślij wiadomość</button>
+                    </form>
                 </div>
-                <form action="https://formspree.io/mateusz.wodnik@gmail.com" method="POST" className={styles.form}>
-                    <input type="text" name="name" placeholder="Imię i nazwisko"/>
-                    <input type="email" name="_replyto" placeholder="twój-email@mail.com"/>
-                    <input type="text" name="way" placeholder="Jak się o mnie dowiedziałeś?"/>
-                    <textarea name="message" cols="30" rows="10" placeholder="Wiadomość"></textarea>
-                    <button type="submit" className={styles.submit}>Wyślij wiadomość</button>
-                </form>
-            </div>
+                <img className={styles.img} src="/images/myImage-sm.png" alt="my photo"/>
             </article>
         );
     }

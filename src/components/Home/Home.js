@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Home.sass';
 import PrintText from '../../_utils/PrintText';
+import LazyImg from '../../_utils/LazyImg';
 
 class Home extends Component {
     state = {
@@ -18,6 +19,7 @@ class Home extends Component {
                     </h1>
                     <h2>{this.state.line2 && <PrintText text="Jestem Web developerem" interval={150} randomize={150} />}</h2>
                 </div>
+                <LazyImg className={styles.img} src="/images/myImage-sm.png" alt="my photo"/>
             </article>
         );
     }

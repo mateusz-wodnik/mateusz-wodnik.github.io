@@ -4,7 +4,11 @@ import styles from './Navigation.sass';
 import { MdHome, MdCode, MdDock, MdContacts } from 'react-icons/md';
 
 const scroll = (e, id) => {
-    document.getElementById(id).scrollIntoView({behavior: "smooth"});
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+    });
 }
 const isActive = (path) => window.location.pathname + window.location.hash === path;  
 

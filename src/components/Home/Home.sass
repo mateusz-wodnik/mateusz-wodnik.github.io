@@ -6,12 +6,26 @@
     width: 100%
     justify-content: center
     height: 100vh
+    position: relative
+    overflow-x: hidden
+    // Remove grid gap for proper absolute image display
+    margin-bottom: -20px
+.img
+    position: absolute
+    height: 100%
+    filter: drop-shadow(-45px 26px 26px rgba(0,0,0,0.6)) opacity(0.4)
+    right: 0
+    margin-right: auto
 .text
     font-size: 1.2em
     font-family: "LeagueSpartan"
     overflow: hidden
     margin: 20px
+    margin-right: auto
     min-width: 300px
+    max-width: 673px
+    width: 100%
+    z-index: 1
     h1
         font-size: 1.4em
         margin-bottom: 40px
@@ -19,3 +33,10 @@
 @media (min-width: 438px)
     .text
         font-size: 2em
+
+@media (min-width: 1400px)
+    .img
+        position: relative
+        height: 100%
+        margin-left: -200px
+        filter: drop-shadow(-45px 26px 26px rgba(0,0,0,0.6))
