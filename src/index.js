@@ -13,7 +13,7 @@ import particles from './components/App/particles.json';
 ReactDOM.render(
     <Fragment>
         {console.log("up")}
-        {/* <Particles params={particles} className={"particles"} /> */}
+        <Particles params={particles} className={"particles"} />
         <BrowserRouter>
             <Route path="/" render={(props) => (
                 <Store {...props}>
