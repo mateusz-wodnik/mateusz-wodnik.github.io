@@ -70,10 +70,7 @@ class Slider extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={(e) => this.handleSlider(e, true)}>elo</button>
-                <button onClick={(e) => this.handleSlider(e, false)}>mordo</button>
-            </div>
+            <div></div>
         )
     }
 }

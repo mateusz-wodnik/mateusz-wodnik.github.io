@@ -17,7 +17,6 @@ ReactDOM.render(
         <BrowserRouter>
             <Route path="/" render={(props) => (
                 <Store {...props}>
-                {console.log("store")}
                     <App />
                 </Store>
             )} />
