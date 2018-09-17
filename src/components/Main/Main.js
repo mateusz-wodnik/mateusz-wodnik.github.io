@@ -6,7 +6,6 @@ import Home from '../Home/Home'
 import Cv from '../Cv/Cv';
 import Contact from '../Contact/Contact';
 import Projects from '../Projects/Projects';
-import LazyImg from '../../_utils/LazyImg';
 
 
 class Main extends Component {

@@ -11,16 +11,18 @@ import Particles from 'react-particles-js';
 import particles from './components/App/particles.json';
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Route path="/" render={(props) => (
-            <Store {...props}>
-                <Fragment>
-                    <Particles params={particles} className={"particles"} />
+    <Fragment>
+        {console.log("up")}
+        {/* <Particles params={particles} className={"particles"} /> */}
+        <BrowserRouter>
+            <Route path="/" render={(props) => (
+                <Store {...props}>
+                {console.log("store")}
                     <App />
-                </Fragment>
-            </Store>
-        )} />
-    </BrowserRouter>,
+                </Store>
+            )} />
+        </BrowserRouter>
+    </Fragment>,
     document.getElementById('root')
 );
 registerServiceWorker();

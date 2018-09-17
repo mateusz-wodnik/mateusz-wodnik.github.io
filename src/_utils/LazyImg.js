@@ -18,7 +18,6 @@ class LazyImg extends Component {
 	}
 
 	render() {
-		console.log(this.state)
 		const { src, alt, className } = this.props
 		const { loading } = this.state
 		return	(

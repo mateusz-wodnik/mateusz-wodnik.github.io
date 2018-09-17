@@ -1,32 +1,47 @@
 .container
-    padding-bottom: 20px
-    flex: 2
-    max-height: 500px
     min-width: 250px
     overflow: auto
-    border: 5px solid var(--bg-primary)
     background: #fff
 .name
     text-transform: uppercase
-    text-align: center
     background: rgba(0,0,0,0.4)
     padding: 15px
     position: sticky
-    left: 0
     top: 0
-    margin-bottom: 20px
+    left: 0
 .list
     display: flex
     justify-content: flex-start
 
-@media (min-width: 600px)
+
+
+@media (min-width: 768px)
     .container
-        border: 7px solid var(--bg-primary)
-        border-top: 0
-        max-height: 100%
+        overflow: initial
     .list
-        display: grid
-        grid-template-columns: repeat(auto-fill, 200px)
-        align-items: center
-        justify-content: center
-        grid-gap: 20px
+        position: relative
+        --offsetX: 0px
+        transform: translateX(var(--offsetX))
+        // animation: move 60s infinite linear
+        transition: 3s
+        &:hover
+            animation-play-state: paused
+
+@keyframes move
+    0%
+        transform: translateX(0)
+    50%
+        transform: translateX(-100%)
+    100%
+        transform: translateX(0)
+
+.speedUp
+    animation-duration: 15s
+
+.hide
+    transform: translateX(-220px)!important
+    margin-right: -220px!important
+    // min-width: 0!important
+    // padding: 0!important
+    // border: 0!important
+    // margin: 0!important
