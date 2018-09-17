@@ -5,8 +5,6 @@ import Technology from './Technology';
 const Technologies = ({technologies}) => (
     <section className={styles.container}>
         <h2 className={styles.name}>Technologie</h2>
-        {/* <button onClick={(e) => handleSlider(e, true)}>elo</button>
-        <button onClick={(e) => handleSlider(e, false)}>mordo</button> */}
         <Slider />
         <ul id="technologies" className={styles.list}>
             {technologies.map(technology => (
@@ -23,7 +21,16 @@ class Slider extends React.Component {
         order: 0,
         trail: 0,
     }
-    handleSlider = (e, dir) => {
+
+    componentDidMount() {
+        this.interval = setInterval(() => this.handleSlider(true), 3000)
+    }
+
+    componentWillUnmount() {
+        window.clearInterval(this.interval)
+    }
+
+    handleSlider = (dir) => {
         let {order, trail, change} = this.state
         const element = document.querySelector("#technologies")
         const childrens = element.childNodes

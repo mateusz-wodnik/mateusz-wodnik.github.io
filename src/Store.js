@@ -10,7 +10,6 @@ export const StoreConsumer = StoreContext.Consumer
 class Store extends Component {
     state = {
         elementsMap: [],
-        // technologies: technologies.skills,
     }
 
     componentDidMount() {
@@ -48,10 +47,6 @@ class Store extends Component {
             elementsMap.push({name: element, value: boundaries.bottom - boundaries.height / 2})
         })
         this.setState({elementsMap})
-    }
-
-    setTechnologiesOrder = (technologies) => {
-        this.setState({technologies})
     }
 }
 
