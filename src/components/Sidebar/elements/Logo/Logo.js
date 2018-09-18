@@ -3,7 +3,7 @@ import styles from './Logo.sass'
 
 const Logo = () => (
     <div className={styles.container}>
-        <span className={styles.image}></span>
+        <img src={"/logo-opt.svg"} alt="logo" className={styles.image} />
     </div>
 );
 
