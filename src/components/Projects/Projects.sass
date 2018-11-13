@@ -6,66 +6,68 @@
     width: 100%
     --columns: 9
     --rows: 13
-    grid-template-columns: 1fr
-    
+    grid-template-columns: 1fr 1fr
+    grid-auto-rows: 50%
+    align-items: start
+
 .name
     width: 100%
     padding: 20px
     background: var(--bg-primary)
-
-// Mixin that returns for each image index two css variables values for grid-column and grid-row property
-=project($idx, $col, $row, $order)
-    --project-#{$idx}-col: auto / span #{$col}
-    --project-#{$idx}-row: auto / span #{$row}
-    --project-#{$idx}-order: #{$order}
-
-// Create image classes using provided css variables
-\:global
-    @for $i from 0 through 8
-        .project-#{$i}
-            grid-column: var(--project-#{$i}-col)
-            grid-row: var(--project-#{$i}-row)
-            order: var(--project-#{$i}-order)
-
-@media (min-width: 768px)
-    .list
-        grid-template-columns: 1fr 1fr
-        grid-template-rows: repeat(6, calc(100vw / 2 - 35px))
-        +project(0,1,1,0)
-        +project(1,1,1,1)
-        +project(2,1,1,2)
-        +project(3,1,1,3)
-        +project(4,1,2,4)
-        +project(5,1,2,5)
-        +project(6,1,2,6)
-        +project(7,1,1,7)
-        +project(8,1,1,8)
-        
-
-@media (min-width: 992px)
-    .list
-        grid-template-columns: repeat(var(--columns), calc((100vw - 72px) / var(--columns)))
-        grid-template-rows: repeat(var(--rows), calc((100vw - 72px) / var(--columns)))
-        +project(0,4,4,0)
-        +project(1,5,5,1)
-        +project(2,4,4,2)
-        +project(3,3,3,3)
-        +project(4,2,3,4)
-        +project(5,3,5,5)
-        +project(6,4,5,8)
-        +project(7,2,2,7)
-        +project(8,2,2,8)
-
-@media (min-width: 1200px)
-    .list
-        --columns: 8
-        --rows: 10
-        +project(0,3,3,0)
-        +project(1,3,3,1)
-        +project(2,3,3,2)
-        +project(3,3,3,3)
-        +project(4,2,3,1)
-        +project(5,3,4,5)
-        +project(6,2,4,2)
-        +project(7,2,2,5)
-        +project(8,3,3,4)
+//
+//// Mixin that returns for each image index two css variables values for grid-column and grid-row property
+//=project($idx, $col, $row, $order)
+//    --project-#{$idx}-col: auto / span #{$col}
+//    --project-#{$idx}-row: auto / span #{$row}
+//    --project-#{$idx}-order: #{$order}
+//
+//// Create image classes using provided css variables
+//\:global
+//    @for $i from 0 through 8
+//        .project-#{$i}
+//            grid-column: var(--project-#{$i}-col)
+//            grid-row: var(--project-#{$i}-row)
+//            order: var(--project-#{$i}-order)
+//
+//@media (min-width: 768px)
+//    .list
+//        grid-template-columns: 1fr 1fr
+//        grid-template-rows: repeat(6, calc(100vw / 2 - 35px))
+//        +project(0,1,1,0)
+//        +project(1,1,1,1)
+//        +project(2,1,1,2)
+//        +project(3,1,1,3)
+//        +project(4,1,2,4)
+//        +project(5,1,2,5)
+//        +project(6,1,2,6)
+//        +project(7,1,1,7)
+//        +project(8,1,1,8)
+//
+//
+//@media (min-width: 992px)
+//    .list
+//        grid-template-columns: repeat(var(--columns), calc((100vw - 72px) / var(--columns)))
+//        grid-template-rows: repeat(var(--rows), calc((100vw - 72px) / var(--columns)))
+//        +project(0,4,4,0)
+//        +project(1,5,5,1)
+//        +project(2,4,4,2)
+//        +project(3,3,3,3)
+//        +project(4,2,3,4)
+//        +project(5,3,5,5)
+//        +project(6,4,5,8)
+//        +project(7,2,2,7)
+//        +project(8,2,2,8)
+//
+//@media (min-width: 1200px)
+//    .list
+//        --columns: 8
+//        --rows: 10
+//        +project(0,3,3,0)
+//        +project(1,3,3,1)
+//        +project(2,3,3,2)
+//        +project(3,3,3,3)
+//        +project(4,2,3,1)
+//        +project(5,3,4,5)
+//        +project(6,2,4,2)
+//        +project(7,2,2,5)
+//        +project(8,3,3,4)

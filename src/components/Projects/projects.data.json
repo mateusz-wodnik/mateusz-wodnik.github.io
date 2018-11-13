@@ -2,6 +2,20 @@
     {
         "id": 6,
         "user": "mateusz-wodnik",
+        "image": "blog-wp",
+        "url": "http://wp-react.cba.pl/",
+        "repo": "blog-wp-react"
+    },
+    {
+        "id": 6,
+        "user": "mateusz-wodnik",
+        "image": "multiapp",
+        "url": "",
+        "repo": "multiapp"
+    },
+    {
+        "id": 6,
+        "user": "mateusz-wodnik",
         "image": "map",
         "url": "https://map-app-google-maps.herokuapp.com/",
         "repo": "map"
@@ -47,13 +61,6 @@
         "image": "photo",
         "url": "https://mateusz-wodnik.github.io/Photo-template",
         "repo": "Photo-template"
-    },
-    {
-        "id": 1,
-        "user": "mateusz-wodnik",
-        "image": "chat",
-        "url": "https://mateusz-wodnik.github.io/ChatApp",
-        "repo": "ChatApp"
     },
     {
         "id": 2,
